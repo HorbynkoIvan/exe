@@ -5,4 +5,8 @@ global.$ = {
     del: require('del'),
     imageminJpegRecompress: require('imagemin-jpeg-recompress'),
     imageminPngquant: require('imagemin-pngquant'),
+    path: {
+        jQuery: './js/jquery.js',
+        js: './js/**/*.js',
+    }
 }
