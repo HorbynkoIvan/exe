@@ -7,7 +7,7 @@ module.exports = function () {
             .pipe($.gp.sourcemaps.init())
             .pipe($.gp.babel({presets: ['@babel/preset-env']}))
             .pipe($.gp.concat('all.js'))
-            .pipe($.gp.uglify())
+            .pipe($.gp.uglify())//minificate
             .pipe($.gp.rename('all.min.js'))
             .pipe($.gp.sourcemaps.write())
             .pipe($.gp.dest('build/js'))
