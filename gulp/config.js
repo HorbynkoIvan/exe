@@ -1,7 +1,13 @@
 module.exports = [
-    './gulp/tasks/build.js',
-    './gulp/tasks/clean.js',
-    './gulp/tasks/copy.js',
-    './gulp/tasks/sass.js',
-    './gulp/tasks/scripts.js'
-]
+    './gulp/tasks/sass',
+    './gulp/tasks/scripts',
+    './gulp/tasks/copy',
+    './gulp/tasks/clean',
+    './gulp/tasks/allimg',
+    './gulp/tasks/html',
+    './gulp/tasks/images',
+    './gulp/tasks/serve',
+    './gulp/tasks/webp',
+    './gulp/tasks/svg',
+    './gulp/tasks/build',
+];

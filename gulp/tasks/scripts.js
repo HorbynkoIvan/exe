@@ -1,4 +1,7 @@
-const jsFiles = [$.path.jQuery, $.path.js]
+const jsFiles = [
+    $.path.jquery,
+    $.path.js,
+];
 
 module.exports = function () {
     $.gulp.task('scripts', function () {
@@ -7,10 +10,10 @@ module.exports = function () {
             .pipe($.gp.sourcemaps.init())
             .pipe($.gp.babel({presets: ['@babel/preset-env']}))
             .pipe($.gp.concat('all.js'))
-            .pipe($.gp.uglify())//minificate
+            .pipe($.gp.uglify())
             .pipe($.gp.rename('all.min.js'))
-            .pipe($.gp.sourcemaps.write())
-            .pipe($.gp.dest('build/js'))
-            .pipe($.gp.browserSync.stream())
-    })
-}
+            .pipe($.gp.sourcemaps.write(''))
+            .pipe($.gulp.dest('build/js'))
+            .pipe($.browserSync.stream());
+    });
+};

@@ -4,15 +4,16 @@ global.$ = {
     browserSync: require('browser-sync').create(),
     del: require('del'),
     imageminJpegRecompress: require('imagemin-jpeg-recompress'),
-    imageminPngquant: require('imagemin-pngquant'),
+    pngquant: require('imagemin-pngquant'),
     path: {
-        config: './gulp/config.js',
-        jQuery: './js/jquery.js',
+        config: require('./gulp/config'),
+        jquery: './js/jquery.js',
         js: './js/**/*.js',
     }
-}
+};
 
 //use loop for connecting all tasks
 $.path.config.forEach(function(path) {
     require(path)()
 })
+

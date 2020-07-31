@@ -8,6 +8,6 @@ module.exports = function () {
             ],
             {base: '.'}
         )
-            .pipe($.gp.dest('build'))// create folder and put file there
+            .pipe($.gulp.dest('build'))// create folder and put file there
     })
 }
