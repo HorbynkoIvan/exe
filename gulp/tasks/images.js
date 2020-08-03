@@ -12,7 +12,7 @@ module.exports = function () {
                         quality: 'medium'
                     }),
                     $.gp.imagemin.optipng({optimizationLevel: 3}),
-                    $.pngquant({quality: '65-70', speed: 5}),
+                    $.pngquant({quality: [0.65, 0.70], speed: 5}),
                     $.gp.imagemin.svgo(),
                 ]))
             .pipe($.gulp.dest('build/img'))
