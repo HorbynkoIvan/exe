@@ -55,6 +55,18 @@ $descriptionColor: #959595;
         }
       }
 
+      &.works__element--active{
+        &:before {
+          opacity: 1;
+          z-index: 1;
+        }
+
+        .works__info {
+          opacity: 1;
+          border-color: $second;
+          z-index: 2;
+        }
+      }
 
       &:nth-child(2) {
         background: url("../img/img1.jpg") center no-repeat;
