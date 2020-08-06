@@ -1,5 +1,7 @@
 $bg: #202020;
 $lineColor: #2f2f2f;
+$worksTextColor: #464646;
+$descriptionColor: #959595;
 
 .works {
   background-color: $bg;
@@ -17,6 +19,68 @@ $lineColor: #2f2f2f;
     grid-auto-rows: minmax(270px, auto);
 
     .works__element {
+      position: relative;
+
+      &:first-child {
+        max-width: 270px;
+
+        &:before {
+          display: none;
+        }
+      }
+
+      &:before {
+        content: '';
+        background-color: rgba(17, 17, 17, 0.85);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 500ms;
+      }
+
+      &:hover {
+        &:before {
+          opacity: 1;
+          z-index: 1;
+        }
+
+        .works__info {
+          opacity: 1;
+          border-color: $second;
+          z-index: 2;
+        }
+      }
+
+
+      &:nth-child(2) {
+        background: url("../img/img1.jpg") center no-repeat;
+        background-size: cover;
+      }
+
+      &:nth-child(3) {
+        background: url("../img/img2.jpg") center no-repeat;
+        background-size: cover
+      }
+
+      &:nth-child(4) {
+        background: url("../img/img3.jpg") center no-repeat;
+        background-size: cover
+      }
+
+      &:nth-child(5) {
+        background: url("../img/img4.jpg") center no-repeat;
+        background-size: cover
+      }
+
+      &:nth-child(6) {
+        background: url("../img/img5.jpg") center no-repeat;
+        background-size: cover
+      }
+
       .works__title {
         font-size: 30px;
         font-family: 'Raleway';
@@ -24,30 +88,119 @@ $lineColor: #2f2f2f;
         color: $white;
         text-transform: uppercase;
         line-height: 1.1;
+        margin: 25px 0;
+        position: relative;
 
         &:before {
           content: '';
           background-color: $lineColor;
           width: 70px;
           height: 2px;
+          position: absolute;
+          left: 0;
+          top: -25px;
         }
       }
-    }
 
-    .works__element__three {
-      grid-column: span 3;
-    }
+      .works__text {
+        font-size: 14px;
+        font-family: 'Raleway';
+        color: $worksTextColor;
+        line-height: 1.429;
+        margin: 20px 0;
+      }
 
-    .works__element__four {
-      grid-column: span 2;
-    }
+      &.works__element__three {
+        grid-column: span 3;
+      }
 
-    .works__element__five {
-      grid-column: span 5;
-    }
+      &.works__element__four {
+        grid-column: span 4;
+      }
 
-    .works__element__six {
-      grid-column: span 6;
+      &.works__element__five {
+        grid-column: span 5;
+      }
+
+      &.works__element__six {
+        grid-column: span 6;
+      }
+
+      .works__info {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity, border-color 500ms;
+        border: 5px solid transparent;
+        box-sizing: border-box;
+        padding: 10px 25px 80px;
+
+        .works__name {
+          font-size: 24px;
+          font-family: 'Raleway';
+          font-weight: 700;
+          color: $white;
+          text-transform: uppercase;
+          line-height: 1.1;
+          margin: 20px 0;
+        }
+
+        .works__description {
+          font-size: 12px;
+          font-family: 'Raleway';
+          font-weight: 400;
+          color: $descriptionColor;
+          text-transform: uppercase;
+          line-height: 1.667;
+          margin: 20px 0;
+
+          &:after {
+            content: '';
+            display: block;
+            background-color: $second;
+            width: 70px;
+            height: 2px;
+            margin-top: 20px;
+          }
+
+        }
+
+        .works_btns {
+          position: absolute;
+          right: 30px;
+          bottom: 30px;
+          .works__zoom, .works__link {
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            border: none;
+            appearance: none;
+            cursor: pointer;
+            margin: 0 2px;
+            display: inline-block;
+            position: relative;
+            background-color: $primary;
+            transition: background-color 500ms;
+
+            &:hover,{
+              background-color: $second;
+            }
+          }
+
+          svg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            fill: $white;
+            width: 15px;
+            height: 15px;
+          }
+        }
+
+      }
     }
 
 
