@@ -5,5 +5,27 @@ $(document).ready(function () {
         $('.works_btns button, .works_btns a').on('blur', function (e) {
             $(this).parents('.works__element').removeClass('works__element--active');
         })
+
+
+        function moveProgressBar(node, nodeLine, tooltip, animationLength = 1500) {
+            const progressElement = $(node);
+            progressElement.each(function (index, value) {
+                $(value).find(nodeLine).animate({
+                    width: value.dataset.progressPercent + '%',
+                }, animationLength)
+                $(value).find(tooltip).show(animationLength)
+            })
+        }
+
+        let animated = true;// switch to false when animation finished
+
+        $(window).scroll(function () {
+            if ($('.skills').offset().top <= $(window).scrollTop()) {
+                if (animated) {
+                    moveProgressBar('.progress__element', '.progress__line', '.progress__tooltip')
+                }
+                animated = false;
+            }
+        })
     }
 )
