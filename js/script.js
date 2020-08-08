@@ -27,5 +27,11 @@ $(document).ready(function () {
                 animated = false;
             }
         })
+
+        //mobile header
+        $('.nav__mobile--collapse').on('click', function (e) {
+            e.preventDefault();
+        $('.header__wrap').toggleClass('nav__mobile--active')
+        })
     }
 )

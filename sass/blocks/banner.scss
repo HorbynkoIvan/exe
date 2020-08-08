@@ -79,7 +79,8 @@ $color-text: #555555;
 }
 
 @media (max-width: 768px) {
-  .banner{
+  .banner {
+    padding-top: 99px;
 
     .banner__wrap {
 
@@ -102,7 +103,7 @@ $color-text: #555555;
 }
 
 @media (max-width: 480px) {
-  .banner{
+  .banner {
 
     .banner__wrap {
 

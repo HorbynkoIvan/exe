@@ -1,6 +1,7 @@
 .header {
   border-bottom: 4px solid $second;
   padding: 0 15px;
+  background-color: $primary;
 
   .header__wrap {
     display: flex;
@@ -13,24 +14,128 @@
       margin-right: 20px;
     }
 
+
     .header__menu {
       margin: 0;
       padding: 0;
     }
   }
+
+  //mobile-nav
+  .nav__mobile--collapse {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    margin: 15px 30px 0 0;
+    display: none;
+  }
+
+  .nav__mobile--collapse:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 25px;
+    height: 2px;
+    display: inline-block;
+    background-color: #fff;
+    transition: all .3s ease-in-out;
+  }
+
+  .nav__mobile--collapse:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 7px;
+    width: 25px;
+    height: 2px;
+    display: inline-block;
+    background-color: #fff;
+    transition: all .3s ease-in-out;
+  }
+
+  .nav__mobile--collapse span {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 25px;
+    height: 2px;
+    display: inline-block;
+    background-color: #fff;
+    transition: all .3s ease-in-out;
+  }
+
+  .nav__mobile--active .header__nav {
+    display: block;
+    background-color: $primary;
+    overflow-y: auto;
+  }
+
+  .nav__mobile--active .nav__mobile--collapse span {
+    opacity: 0;
+  }
+
+  .nav__mobile--active .nav__mobile--collapse:before {
+    transform: rotate(45deg);
+    top: 10px;
+  }
+
+  .nav__mobile--active .nav__mobile--collapse:after {
+    transform: rotate(-45deg);
+    top: 10px;
+  }
 }
 
 @media (max-width: 768px) {
   .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+
     .header__wrap {
-      flex-direction: column;
-      justify-content: flex-start;
       padding: 25px 0;
 
-      .header__logo {
-        margin-right: 0;
-        margin-bottom: 20px;
+      &.nav__mobile--active {
+        .header__nav {
+          display: block;
+          position: fixed;
+          top: 99px;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          padding: 35px 5px;
+          overflow: hidden;
+          z-index: 1;
+
+          .header__menu {
+            flex-direction: column;
+            text-align: center;
+
+            .menu__element {
+              margin: 0 0 10px 0;
+
+              .menu__link {
+                font-size: 16px;
+              }
+            }
+          }
+
+
+        }
+      }
+
+      .header__nav {
+        display: none;
       }
     }
+
+    .nav__mobile--collapse {
+      display: block;
+    }
   }
+
+
 }
