@@ -37,7 +37,8 @@ $textColor: #464646;
       max-width: 555px;
       margin: 25px auto;
     }
-    .clients__carousel{
+
+    .clients__carousel {
       margin: 50px 0;
       padding-left: 110px;
       padding-right: 110px;
@@ -50,7 +51,15 @@ $textColor: #464646;
 }
 
 @media(max-width: 980px) {
+  .clients {
+    .clients__wrap {
+      .clients__carousel {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+    }
 
+  }
 }
 
 @media(max-width: 768px) {
@@ -58,5 +67,11 @@ $textColor: #464646;
 }
 
 @media(max-width: 480px) {
+  .clients {
+    .clients__wrap {
+      padding-top: 30px;
+      padding-bottom: 40px;
+    }
 
+  }
 }

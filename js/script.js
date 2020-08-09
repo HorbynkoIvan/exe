@@ -41,15 +41,18 @@ $(document).ready(function () {
         nav: true,
         dots: false,
         navText:[],//remove default arrows
-        items:1,
+        items: 5,
         responsive:{
             0:{
                 items:1
             },
-            600:{
+            480:{
+                items:2
+            },
+            768:{
                 items:3
             },
-            1000:{
+            980:{
                 items:5
             }
         }
