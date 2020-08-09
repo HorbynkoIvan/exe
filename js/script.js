@@ -31,7 +31,28 @@ $(document).ready(function () {
         //mobile header
         $('.nav__mobile--collapse').on('click', function (e) {
             e.preventDefault();
-        $('.header__wrap').toggleClass('nav__mobile--active')
+            $('.header__wrap').toggleClass('nav__mobile--active')
         })
+
+        //init owl-carousel
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:0,
+        nav: true,
+        dots: false,
+        navText:[],//remove default arrows
+        items:1,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
+    })
     }
 )
