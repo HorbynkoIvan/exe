@@ -1,13 +1,15 @@
 module.exports = function () {
     $.gulp.task('sass', function () {
         return $.gulp.src('sass/style.scss')
-            .pipe($.gp.plumber())
-            .pipe($.gp.sourcemaps.init())
-            .pipe($.gp.sass())
-            .pipe($.gp.autoprefixer())
-            .pipe($.gp.csso())
+            .pipe($.plumber())
+            .pipe($.sourcemaps.init())
+            .pipe($.sass())
+            .pipe($.autoprefixer({
+                cascade: false
+            }))
+            .pipe($.csso())
             .pipe($.gp.rename('style.min.css'))
-            .pipe($.gp.sourcemaps.write(''))
+            .pipe($.sourcemaps.write(''))
             .pipe($.gulp.dest('build/css'))
             .pipe($.browserSync.stream());
     });

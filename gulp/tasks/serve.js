@@ -2,7 +2,7 @@
 module.exports = function () {
     $.gulp.task('serve', function () {
         $.browserSync.init({
-            server: 'build/'
+            server: {baseDir: 'build/'}
         });
 
         $.gulp.watch('sass/**/*.scss', $.gulp.series('sass'));
